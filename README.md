@@ -1,6 +1,6 @@
 # Intercom Invites
 
-![Intercom Invites](https://github.com/danfar93/Intercom-Invites/blob/master/Intercom-Invites.png)
+![Intercom Invites](https://github.com/danfar93/Intercom-Project/blob/master/Intercom-Invites.png)
 
 - Clone this repository or download the project zip
 - Open the XCode project
@@ -14,4 +14,4 @@
 - `testDistanceValidatorSuccess`
 - `testDistanceValidatorFailure`
 
-Check out end result: [output.txt](https://github.com/danfar93/Intercom-Invites/blob/master/output.txt)
+Check out end result: [output.txt](https://github.com/danfar93/Intercom-Project/blob/master/output.txt)
