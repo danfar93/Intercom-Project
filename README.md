@@ -14,4 +14,4 @@
 - `testDistanceValidatorSuccess`
 - `testDistanceValidatorFailure`
 
-- Check out end result: [output.txt](https://github.com/danfar93/Intercom-Project/blob/master/output.txt)
+- Check out the end result: [output.txt](https://github.com/danfar93/Intercom-Project/blob/master/output.txt)
