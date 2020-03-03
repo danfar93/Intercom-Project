@@ -36,7 +36,7 @@ class IntercomUnitTests: XCTestCase {
     
     /*
      * Tests Converting Degrees to Radians
-     * DegreesConverterSupport.convertDegreesToRadians()
+     * Method Under Test: DegreesConverterSupport.convertDegreesToRadians()
      * Assert - true
      */
     func testDegreesConverterSuccess() {
@@ -61,7 +61,7 @@ class IntercomUnitTests: XCTestCase {
     
     /*
      * Tests Converting Degrees to Radians
-     * DegreesConverterSupport.convertDegreesToRadians()
+     * Method Under Test: DegreesConverterSupport.convertDegreesToRadians()
      * Assert - false
      */
     func testDegreesConverterFailure() {
@@ -86,7 +86,7 @@ class IntercomUnitTests: XCTestCase {
     
     /*
      * Tests Calculating Distance Between Customer & Intercom
-     * HaversineFormulaSupport.calculateDistanceUsingHaversine()
+     * Method Under Test: HaversineFormulaSupport.calculateDistanceUsingHaversine()
      * Assert - true
      */
     func testHarversineFormulaSuccess() {
@@ -115,7 +115,7 @@ class IntercomUnitTests: XCTestCase {
     
     /*
      * Tests Calculating Distance Between Customer & Intercom
-     * HaversineFormulaSupport.calculateDistanceUsingHaversine()
+     * Method Under Test: HaversineFormulaSupport.calculateDistanceUsingHaversine()
      * Assert - false
      */
     func testHarversineFormulaFailure() {
@@ -145,7 +145,7 @@ class IntercomUnitTests: XCTestCase {
     
     /*
      * Tests Successful Validation of Customer within 100 miles of Intercom
-     * InviteValidator.isCustomerEligibleForInvite()
+     * Method Under Test: DistanceValidator.isCustomerEligibleForInvite()
      * Assert - true
      */
     func testDistanceValidatorSuccess() {
@@ -161,7 +161,7 @@ class IntercomUnitTests: XCTestCase {
     
     /*
      * Tests Failure to Validate if Customer within 100 miles of Intercom
-     * InviteValidator.isCustomerEligibleForInvite()
+     * Method Under Test: DistanceValidator.isCustomerEligibleForInvite()
      * Assert - false
      */
     func testDistanceValidatorFailure() {
@@ -176,45 +176,75 @@ class IntercomUnitTests: XCTestCase {
     }
     
 
-    
+    /*
+     * Tests converting a single line to a Customer object
+     * Method Under Test: HomeViewController.convertEachLinetoJsonObject()
+     * Assert - No Error Thrown
+     */
     func testConvertingSingleLineToCustomerObjectSuccess() throws {
         let homeVC = HomeViewController()
         XCTAssertNoThrow(try homeVC.convertEachLinetoJsonObject(customerLine: customerLine))
     }
     
     
+    /*
+     * Tests converting a single line to a Customer object with null latitude value
+     * Method Under Test: HomeViewController.convertEachLinetoJsonObject()
+     * Assert - Error Thrown
+     */
     func testConvertingSingleLineToCustomerObjectNullLatValueFailure() throws {
           let homeVC = HomeViewController()
           XCTAssertThrowsError(try homeVC.convertEachLinetoJsonObject(customerLine: customerLineNullLatValue))
     }
     
     
+    /*
+     * Tests converting a single line to a Customer object with null longitude value
+     * Method Under Test: HomeViewController.convertEachLinetoJsonObject()
+     * Assert - Error Thrown
+     */
     func testConvertingSingleLineToCustomerObjectNullLongValueFailure() throws {
           let homeVC = HomeViewController()
           XCTAssertThrowsError(try homeVC.convertEachLinetoJsonObject(customerLine: customerLineNullLongValue))
     }
     
     
+    /*
+     * Tests converting a single line to a Customer object with null user_id value
+     * Method Under Test: HomeViewController.convertEachLinetoJsonObject()
+     * Assert - Error Thrown
+     */
     func testConvertingSingleLineToCustomerObjectNullIDValueFailure() throws {
           let homeVC = HomeViewController()
           XCTAssertThrowsError(try homeVC.convertEachLinetoJsonObject(customerLine: customerLineNullIDValue))
     }
     
-
     
+    /*
+     * Tests converting a single line to a Customer object with null name value
+     * Method Under Test: HomeViewController.convertEachLinetoJsonObject()
+     * Assert - Error Thrown
+     */
     func testConvertingSingleLineToCustomerObjectNullNameValueFailure() throws {
         let homeVC = HomeViewController()
         XCTAssertThrowsError(try homeVC.convertEachLinetoJsonObject(customerLine: customerLineNullNameValue))
     }
     
       
-    
+    /*
+     * Test initalisation of Customer object
+     * Assert - not nil
+     */
     func testCustomerModelInitialisation() {
         let customer = CustomerModel.init(longitude: 53.1489345, latitude: -6.8422408, name: "Daniel Farrell", userId: 13)
         XCTAssertNotNil(customer)
     }
     
     
+    /*
+     * Test initalisation of Customer object & setting radian values after initialisation
+     * Assert - not nil
+     */
     func testCustomerModelSetRadians() {
         let customer = CustomerModel.init(longitude:  53.1489345, latitude: -6.8422408, name: "Daniel Farrell", userId: 13)
         
