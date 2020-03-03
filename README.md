@@ -17,7 +17,7 @@
 - :white_check_mark: `testConvertingSingleLineToCustomerObjectNullLatValueFailure()`
 - :white_check_mark: `testConvertingSingleLineToCustomerObjectNullLongValueFailure()`
 - :white_check_mark: `testConvertingSingleLineToCustomerObjectNullIDValueFailure()`
-- :white_check_mark:`testConvertingSingleLineToCustomerObjectNullNameValueFailure()`
+- :white_check_mark: `testConvertingSingleLineToCustomerObjectNullNameValueFailure()`
 - :white_check_mark: `testCustomerModelInitialisation()`
 - :white_check_mark: `testCustomerModelSetRadians()`
 
