@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		383B6D7A240D80DB0070564F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3848FA4C23ED643400CEC0AA /* HomeViewController.swift */; };
+		383B6D7B240D843A0070564F /* CustomerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3848FA6023ED664800CEC0AA /* CustomerModel.swift */; };
+		383B6D7C240D84430070564F /* InviteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3848FA6823ED753E00CEC0AA /* InviteListViewController.swift */; };
+		383B6D7D240D84540070564F /* InvitedCustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383F614123ED912900C51F0C /* InvitedCustomerCell.swift */; };
 		383F614223ED912900C51F0C /* InvitedCustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383F614123ED912900C51F0C /* InvitedCustomerCell.swift */; };
 		383F614523ED950A00C51F0C /* DistanceValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383F614423ED950A00C51F0C /* DistanceValidator.swift */; };
 		383F614C23EDDE6C00C51F0C /* VisbyRoundCF-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 383F614A23EDDC7600C51F0C /* VisbyRoundCF-Bold.otf */; };
@@ -301,6 +305,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				383B6D7A240D80DB0070564F /* HomeViewController.swift in Sources */,
+				383B6D7D240D84540070564F /* InvitedCustomerCell.swift in Sources */,
+				383B6D7C240D84430070564F /* InviteListViewController.swift in Sources */,
+				383B6D7B240D843A0070564F /* CustomerModel.swift in Sources */,
 				383F617F23EE106D00C51F0C /* HaversineFormulaSupport.swift in Sources */,
 				383F618023EE107300C51F0C /* DistanceValidator.swift in Sources */,
 				383F617E23EE0C8500C51F0C /* DegreesConverterSupport.swift in Sources */,
@@ -444,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -498,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

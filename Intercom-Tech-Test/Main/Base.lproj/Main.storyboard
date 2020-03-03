@@ -43,6 +43,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="SKp-q7-XEj"/>
                     <connections>
                         <outlet property="getInviteListButton" destination="xYs-hk-0RX" id="9i0-xE-iGU"/>
                         <segue destination="aan-wU-iyW" kind="presentation" identifier="inviteSegue" id="vHz-qA-shu"/>
@@ -140,7 +141,7 @@
                     </view>
                     <connections>
                         <outlet property="invitedCustomersTableView" destination="A5B-jX-uxu" id="DEK-Aa-gPy"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="backSegue" id="9XC-fT-nkd"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="backSegue" id="SY6-bv-wL5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDG-kZ-FZ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

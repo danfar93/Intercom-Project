@@ -10,7 +10,30 @@ import XCTest
 
 class IntercomUnitTests: XCTestCase {
 
+    
+    var customerLine = String()
+    var customerLineNullLatValue = String()
+    var customerLineNullIDValue = String()
+    var customerLineNullNameValue = String()
+    var customerLineNullLongValue = String()
+    
+    override func setUp() {
+        customerLine = "{\"latitude\": \"52.986375\", \"user_id\": 12, \"name\": \"Christina McArdle\", \"longitude\": \"-6.043701\"}"
+        customerLineNullLatValue = "{\"latitude\": , \"user_id\": 12, \"name\": \"Christina McArdle\", \"longitude\": \"-6.043701\"}"
+        customerLineNullIDValue = "{\"latitude\": \"52.986375\", \"user_id\": , \"name\": \"Christina McArdle\", \"longitude\": \"-6.043701\"}"
+        customerLineNullNameValue = "{\"latitude\": \"52.986375\", \"user_id\": 12, \"name\": , \"longitude\": \"-6.043701\"}"
+        customerLineNullLongValue = "{\"latitude\": \"52.986375\", \"user_id\": 12, \"name\": \"Christina McArdle\", \"longitude\": }"
+    }
 
+    override func tearDown() {
+        customerLine = ""
+        customerLineNullLatValue = ""
+        customerLineNullIDValue = ""
+        customerLineNullNameValue = ""
+        customerLineNullLongValue = ""
+    }
+    
+    
     /*
      * Tests Converting Degrees to Radians
      * DegreesConverterSupport.convertDegreesToRadians()
@@ -152,5 +175,54 @@ class IntercomUnitTests: XCTestCase {
         assert(!isEligible)
     }
     
+
+    
+    func testConvertingSingleLineToCustomerObjectSuccess() throws {
+        let homeVC = HomeViewController()
+        XCTAssertNoThrow(try homeVC.convertEachLinetoJsonObject(customerLine: customerLine))
+    }
+    
+    
+    func testConvertingSingleLineToCustomerObjectNullLatValueFailure() throws {
+          let homeVC = HomeViewController()
+          XCTAssertThrowsError(try homeVC.convertEachLinetoJsonObject(customerLine: customerLineNullLatValue))
+    }
+    
+    
+    func testConvertingSingleLineToCustomerObjectNullLongValueFailure() throws {
+          let homeVC = HomeViewController()
+          XCTAssertThrowsError(try homeVC.convertEachLinetoJsonObject(customerLine: customerLineNullLongValue))
+    }
+    
+    
+    func testConvertingSingleLineToCustomerObjectNullIDValueFailure() throws {
+          let homeVC = HomeViewController()
+          XCTAssertThrowsError(try homeVC.convertEachLinetoJsonObject(customerLine: customerLineNullIDValue))
+    }
+    
+
+    
+    func testConvertingSingleLineToCustomerObjectNullNameValueFailure() throws {
+        let homeVC = HomeViewController()
+        XCTAssertThrowsError(try homeVC.convertEachLinetoJsonObject(customerLine: customerLineNullNameValue))
+    }
+    
+      
+    
+    func testCustomerModelInitialisation() {
+        let customer = CustomerModel.init(longitude: 53.1489345, latitude: -6.8422408, name: "Daniel Farrell", userId: 13)
+        XCTAssertNotNil(customer)
+    }
+    
+    
+    func testCustomerModelSetRadians() {
+        let customer = CustomerModel.init(longitude:  53.1489345, latitude: -6.8422408, name: "Daniel Farrell", userId: 13)
+        
+        customer.latRadian = 0.930948639728
+        customer.longRadian = -0.10921684028
+        
+        XCTAssertTrue(customer.latRadian != nil && customer.longRadian != nil)
+      }
+
 
 }

@@ -26,17 +26,17 @@ class HomeViewController: UIViewController {
     /*
      * Converts customers.txt to a String and seperates by line
      */
-      func convertTxtFileToCustomerLinesArray()  {
+    func convertTxtFileToCustomerLinesArray(filename: String)  {
     
         var customerFileString = String()
         
-            if let path = Bundle.main.path(forResource: "customers", ofType: "txt") {
+            if let path = Bundle.main.path(forResource: filename, ofType: "txt") {
                 do {
                     customerFileString = try String(contentsOfFile: path, encoding: .utf8)
                     let customerLinesArray = customerFileString.components(separatedBy: .newlines)
                     
                     for customerLine in customerLinesArray {
-                        convertEachLinetoJsonObject(customerLine: customerLine)
+                        try convertEachLinetoJsonObject(customerLine: customerLine)
                     }
    
                 } catch {
@@ -51,7 +51,7 @@ class HomeViewController: UIViewController {
      * Converts each line of customers.txt to JSON Objects and adds customers
      * to allCustomersArray & invitedCustomersArray
      */
-    func convertEachLinetoJsonObject(customerLine: String) {
+    func convertEachLinetoJsonObject(customerLine: String) throws {
         
         let data = Data(customerLine.utf8)
         
@@ -71,7 +71,7 @@ class HomeViewController: UIViewController {
                 }
             }
         } catch let error as NSError {
-            print("Failed to load: \(error.localizedDescription)")
+            throw(error)
         }
     }
     
@@ -106,7 +106,7 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func getInviteListPressed(_ sender: Any) {
-        convertTxtFileToCustomerLinesArray()
+        convertTxtFileToCustomerLinesArray(filename: "customers")
         performSegue(withIdentifier: "inviteSegue", sender: self)
     }
     
