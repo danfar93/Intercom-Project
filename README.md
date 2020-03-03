@@ -7,11 +7,18 @@
 - Install on Simulator or iPhone
 - Run `XCTestCase` IntercomUnitTests (XCode > Product > Test)
 
-- `testDegreesConverterSuccess`
-- `testDegreesConverterFailure`
-- `testHarversineFormulaSuccess`
-- `testHarversineFormulaFailure`
-- `testDistanceValidatorSuccess`
-- `testDistanceValidatorFailure`
+- `testDegreesConverterSuccess()`
+- `testDegreesConverterFailure()`
+- `testHarversineFormulaSuccess()`
+- `testHarversineFormulaFailure()`
+- `testDistanceValidatorSuccess()`
+- `testDistanceValidatorFailure()`
+- `testConvertingSingleLineToCustomerObjectSuccess()`
+- `testConvertingSingleLineToCustomerObjectNullLatValueFailure()`
+- `testConvertingSingleLineToCustomerObjectNullLongValueFailure()`
+- `testConvertingSingleLineToCustomerObjectNullIDValueFailure()`
+- `testConvertingSingleLineToCustomerObjectNullNameValueFailure()`
+- `testCustomerModelInitialisation()`
+- `testCustomerModelSetRadians()`
 
 - Check out the end result: [output.txt](https://github.com/danfar93/Intercom-Project/blob/master/output.txt)
